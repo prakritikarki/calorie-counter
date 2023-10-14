@@ -1,3 +1,5 @@
+
+
 calories = {
    'Hamburger': 600,
    'Cheese Burger': 750,
@@ -42,6 +44,29 @@ def calorie_counter(items):
             print(f"{item} not found in the menu")
     return total
 
+
 menu_items = ["Cheesy Combo", "Hamburger", "Lemonade"]
 total_calories = calorie_counter(menu_items)
 print(f"Total calories: {total_calories}")
+
+
+#using recursive function
+from module.exceptions import MealTooBigError
+def calorie_counter(items):
+    total = 0
+    for item in items:  
+        if item in calories:
+            total += calories[item]
+        elif item in combos:
+            total += calorie_counter(combos[item])
+        else:
+            print(f"{item} not found in the menu")
+    if total > 2000:
+        raise MealTooBigError(total)
+    return total
+
+
+menu_items = ["Cheesy Combo", "Veggie Combo","Vegan Combo", "Lemonade"]
+total_calories = calorie_counter(menu_items)
+print(f"Total calories: {total_calories}")
+
