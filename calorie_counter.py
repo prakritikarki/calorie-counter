@@ -14,7 +14,7 @@ combos = {
     "Veggie Combo" : ["Veggie Burger", "Sweet Potatoes", "Iced Tea"],
     "Vegan Combo" : ["Vegan Burger", "Salad", "Lemonade"],
 }
-
+#creatin a calorie counter function,handling combos and handling errors
 def calorie_counter(*items):
     total=0
     for item in items:
@@ -29,3 +29,19 @@ def calorie_counter(*items):
                print(f"{item} not found in the menu")
 
     return total
+
+#using recursive function
+def calorie_counter(items):
+    total = 0
+    for item in items:  
+        if item in calories:
+            total += calories[item]
+        elif item in combos:
+            total += calorie_counter(combos[item])
+        else:
+            print(f"{item} not found in the menu")
+    return total
+
+menu_items = ["Cheesy Combo", "Hamburger", "Lemonade"]
+total_calories = calorie_counter(menu_items)
+print(f"Total calories: {total_calories}")
