@@ -21,9 +21,11 @@ def calorie_counter(*items):
         if item in calories:
          total += calories[item]
         else:
-           combo_items = combos[item]
-           for combo_item in combo_items:
-            total += calories[combo_item]
+            try:
+               combo_items = combos[item]
+               for combo_item in combo_items:
+                total += calories[combo_item]
+            except KeyError:
+               print(f"{item} not found in the menu")
 
     return total
-        
