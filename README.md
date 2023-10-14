@@ -1,2 +1,4 @@
 # calorie-counter
-#create a colorie counter function : excerise 1
+ 
+
+ "This is my solution for calorie counter exercise."
