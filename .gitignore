@@ -4,6 +4,3 @@
 main.ipynb
 #ignore_pycache
 __pycache__/
-__pycache__/*
-*/__pycache__
-*/__pycache__/*

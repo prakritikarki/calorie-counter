@@ -67,6 +67,13 @@ def calorie_counter(items):
 
 
 menu_items = ["Cheesy Combo", "Veggie Combo","Vegan Combo", "Lemonade"]
-total_calories = calorie_counter(menu_items)
-print(f"Total calories: {total_calories}")
+try:
+    total_calories = calorie_counter(menu_items)
+    print(f"Total calories: {total_calories}")
+except MealTooBigError as e:
+    print(f"Error:{e}")
+
+#using more complex data
+from module.complex_data import meals, combos
+
 
