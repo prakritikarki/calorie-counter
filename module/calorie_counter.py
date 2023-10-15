@@ -73,7 +73,6 @@ try:
 except MealTooBigError as e:
     print(f"Error:{e}")
 
-#using more complex data
-from module.complex_data import meals, combos
+
 
 
