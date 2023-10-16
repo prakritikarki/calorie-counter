@@ -71,6 +71,7 @@ combos = [
     }
 ]
 
+from module.exceptions import InvalidItemId
 meals_info = {
     meal["id"]:meal
     for meal in meals
@@ -103,5 +104,5 @@ def price_counter(items):
             combo = combos_info[item]
             total += combo["price"]
         else:
-            print(f'{item} not found in the menu')
+            raise InvalidItemId(item)
     return total
