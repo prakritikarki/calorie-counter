@@ -32,9 +32,9 @@ def calorie_counter(items):
         else:
             raise InvalidItemId(item)
     return total
-item_list = ["combo-2", "meal-3", "meal-8","Tacos"]
-total_calories = calorie_counter(item_list)
-print(f'Total calories: {total_calories}')
+# item_list = ["combo-2", "meal-3", "meal-8","Tacos"]
+# total_calories = calorie_counter(item_list)
+# print(f'Total calories: {total_calories}')
 
 def price_counter(items):
     total = 0
