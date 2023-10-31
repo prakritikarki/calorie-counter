@@ -1,9 +1,13 @@
 
-from module.exceptions import InvalidItemId
+import sys
+
+sys.path.append('C:\\Users\\User\\OneDrive\\Desktop\\prakriti\\git\\calorie-counter\\module\\exceptions.py')
+
+from exceptions import InvalidItemId, MealTooBigError
 
 import json
 
-with open("module/data/combos.json") as file:
+with open("C:\\Users\\User\\OneDrive\\Desktop\\prakriti\\git\\calorie-counter\\module\\data\\combos.json") as file:
 	combos = json.load(file)["combos"]
 	
 combos_info = {
@@ -12,7 +16,7 @@ combos_info = {
 }
 print (combos_info)
 
-with open("module/data/meals.json") as file:
+with open("C:\\Users\\User\\OneDrive\\Desktop\\prakriti\\git\\calorie-counter\\module\\data\\meals.json") as file:
 	meals = json.load(file)["meals"]
 
 meals_info = {
@@ -32,9 +36,10 @@ def calorie_counter(items):
         else:
             raise InvalidItemId(item)
     return total
-# item_list = ["combo-2", "meal-3", "meal-8","Tacos"]
-# total_calories = calorie_counter(item_list)
-# print(f'Total calories: {total_calories}')
+item_list = ["combo-2", "meal-3", "meal-8"]
+total_calories = calorie_counter(item_list)
+print(f'Total calories: {total_calories}')
+
 
 def price_counter(items):
     total = 0
@@ -49,4 +54,4 @@ def price_counter(items):
     return total
 item_list = ["combo-2", "meal-3", "meal-8"]
 total_price = price_counter(item_list)
-print(f'Total calories: {total_price}')
+print(f'Total price: {total_price}')
